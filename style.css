@@ -227,17 +227,35 @@ body::-webkit-scrollbar {
 }
 
 .container.main-bg {
+  position: relative;
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
   background-image: url(./images/other-images/Mask-group.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: 100%;
   min-height: 720px;
-  height: 100%;
   padding-top: 120px;
   padding-left: 44px;
+}
+
+.main__bg-content-img-top {
+  position: absolute;
+  right: 266px;
+  top: 176px;
+}
+
+.main__bg-content-img-left {
+  position: absolute;
+  right: 494px;
+  top: 422px;
+}
+
+.main__bg-content-img-right {
+  position: absolute;
+  right: 77px;
+  top: 383px;
 }
 
 .main__bg-seller-text {
@@ -672,8 +690,7 @@ body::-webkit-scrollbar {
   gap: 12px;
 }
 
-.product__description-reviews-img.best__sallers {
-}
+.product__description-reviews-img.best__sallers {}
 
 .product__description-reviews-text {
   line-height: 150%;
@@ -1858,6 +1875,13 @@ body::-webkit-scrollbar {
   padding: 0;
 }
 
+@media (max-width: 1150px) {
+  .main__bg-content {
+    position: relative;
+    z-index: 10;
+  }
+}
+
 @media (max-width: 1050px) {
   .header__burger-btn {
     display: block;
@@ -2021,7 +2045,6 @@ body::-webkit-scrollbar {
     padding-top: 56px;
     padding-left: 24px;
     padding-bottom: 56px;
-    min-height: auto;
   }
 
   .main__bg-seller-text {
@@ -2600,6 +2623,18 @@ body::-webkit-scrollbar {
   .footer {
     padding: 240px 0 64px 0;
   }
+
+  .main__bg-content-img-top {
+    display: none;
+  }
+
+  .main__bg-content-img-left {
+    display: none;
+  }
+
+  .main__bg-content-img-right {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -2667,4 +2702,60 @@ body::-webkit-scrollbar {
   .footer__basement-content-items {
     gap: 16px;
   }
+}
+
+@media (max-width: 500px) {
+  .container.main-bg {
+    background-image: url(./images/other-images/mobile-main-bg.png);
+    background-position: center; /* Чтобы изображение было центрировано в контейнере */
+    width: 100%; /* Убедитесь, что контейнер занимает всю ширину */
+    height: 692px;
+    padding-bottom: 0px;
+
+  }
+
+  .main__bg-content-img-top {
+    display: block;
+    width: 108px;
+    height: 108px;
+    position: absolute;
+    top: 65%;
+    /* Сдвигает верхний край изображения на 50% от высоты родителя */
+    left: 48%;
+    /* Сдвигает левый край изображения на 50% от ширины родителя */
+    transform: translate(-50%, -50%);
+  }
+
+  .main__bg-content-img-left {
+    display: block;
+    width: 88px;
+    height: 88px;
+    top: 86%;
+    /* Сдвигает верхний край изображения на 50% от высоты родителя */
+    left: 17%;
+    /* Сдвигает левый край изображения на 50% от ширины родителя */
+    transform: translate(-50%, -50%);
+  }
+
+  .main__bg-content-img-right {
+    display: block;
+    width: 85px;
+    height: 85px;
+    top: 84%;
+    /* Сдвигает верхний край изображения на 50% от высоты родителя */
+    left: 77%;
+    /* Сдвигает левый край изображения на 50% от ширины родителя */
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 435px) {
+  .main__bg-content-img-left {
+    top: 83%;
+  }
+
+  .main__bg-content-img-right {
+    top: 80%;
+  }
+
 }
